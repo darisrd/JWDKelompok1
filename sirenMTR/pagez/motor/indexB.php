@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIPUS | Buku</title>
+    <title>SIRENMTR | motor</title>
 
     <?php
     include '../../koneksi.php';
@@ -75,7 +75,7 @@
             <!-- Brand Logo -->
             <a href="../../index.php" class="brand-link">
                 <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">SIPUS</span>
+                <span class="brand-text font-weight-light">SIRENMTR</span>
             </a>
 
             <!-- Sidebar -->
@@ -118,9 +118,9 @@
                         </li>
                         <li class="nav-item">
                             <a href="indexB.php" class="nav-link">
-                                <i class="nav-icon fa fa-book"></i>
+                                <i class="nav-icon fa fa-motorcycle"></i>
                                 <p>
-                                    Data Buku
+                                    Data motor
                                 </p>
                             </a>
                         </li>
@@ -146,52 +146,47 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Beranda</h1>
+                            <h1 class="m-0">Data motor</h1>
                         </div><!-- /.col -->
                         <!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
                 <div class="container-fluid">
-                    INI ADD BUKU
-                    <?php
-                    $id_buku = $_GET['id'];
-                    $q_tampil_buku = mysqli_query($db, "SELECT * FROM tbmotor WHERE id='$id_buku'");
-                    $r_tampil_buku = mysqli_fetch_array($q_tampil_buku);
+                    <a class="btn btn-primary" href="addB.php">Tambah motor</a>
+                    <br>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>ID motor</th>
+                                <th>Nama motor</th>
+                                <th>Merk motor</th>
+                                <th>Opsi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
 
-                    ?>
-                    <form action="../../proses/buku-edit-proses.php" method="post">
-                        <table id="tabel-input">
-                            <tr>
-                                <td class="label-formulir">ID</td>
-                                <td class="isian-formulir"><input type="text" name="id_buku" value="<?php echo $r_tampil_buku['id']; ?>" readonly="readonly" class="isian-formulir isian-formulir-border warna-formulir-disabled"></td>
-                            </tr>
-                            <tr>
-                                <td class="label-formulir">Nama Motor</td>
-                                <td class="isian-formulir"><input type="text" name="judul_buku" value="<?php echo $r_tampil_buku['namamotor']; ?>" class="isian-formulir isian-formulir-border"></td>
-                            </tr>
-                            <tr>
-                                <td class="label-formulir">Merk Motor</td>
-                                <td class="isian-formulir">
-                                <select required name="merk_motor" value="<?php echo $r_tampil_buku['merkmotor']; ?>" class="isian-formulir isian-formulir-border">
-                                        <option value="" select="selected">~ Pilih Kategori ~</option>
-                                        <option value="Yamaha">Yamaha</option>
-                                        <option value="Honda">Honda</option>
-                                        <option value="Suzuki">Suzuki</option>
-                                        <option value="Kawasaki">Kawasaki</option>
-                                        <option value="Harley Davidson">Harley Davidson</option>
-                                    </select>
+                            $sql = "SELECT * FROM tbmotor ORDER BY id DESC";
+                            $q_tampil_motor = mysqli_query($db, $sql);
+
+                            $nomor = 1;
+                            while ($r_tampil_motor = mysqli_fetch_array($q_tampil_motor)) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $nomor++; ?></td>
+                                    <td><?php echo $r_tampil_motor['id']; ?></td>
+                                    <td><?php echo $r_tampil_motor['namamotor']; ?></td>
+                                    <td><?php echo $r_tampil_motor['merkmotor']; ?></td>
+                                    <td>
+                                        <a class="btn btn-primary" href="editB.php?id=<?php echo $r_tampil_motor['id']; ?>">Edit</a>
+                                        <a onclick="return confirm('Yakin ingin menghapus data ?')" class="btn btn-danger" href="../../proses/motor-hapus.php?id=<?php echo $r_tampil_motor['id']; ?>">Hapus</a>
+
                                     </td>
-                            </tr>
-                            <tr>
-                                <td class="label-formulir">Status</td>
-                                <td class="isian-formulir"><input type="text" name="pengarang" value="<?php echo $r_tampil_buku['status']; ?>" class="isian-formulir isian-formulir-border"></td>
-                            </tr>
-                            <tr>
-                                <td class="label-formulir"></td>
-                                <td class="isian-formulir"><input type="submit" name="simpan" value="Simpan" id="tombol-simpan"></td>
-                            </tr>
-                        </table>
-                    </form>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <!-- /.content-header -->
@@ -202,8 +197,8 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>PERPUSTAKAAN UMUM </strong>
-            | Jl. Lembah Abang No 11, Telp: (021)55555555
+            <strong>RENTAL MOTOR JWD </strong>
+            | Jl. Selamat No 123, Telp: 022- 56785XXXX
         </footer>
 
         <!-- Control Sidebar -->

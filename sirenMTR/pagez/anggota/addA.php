@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIPUS | Anggota</title>
+    <title>SIRENMTR | Anggota</title>
 
     <?php
     include '../../koneksi.php';
@@ -75,7 +75,7 @@
             <!-- Brand Logo -->
             <a href="../../index.php" class="brand-link">
                 <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">SIPUS</span>
+                <span class="brand-text font-weight-light">SIRENMTR</span>
             </a>
 
             <!-- Sidebar -->
@@ -117,10 +117,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../buku/indexB.php" class="nav-link">
-                                <i class="nav-icon fa fa-book"></i>
+                            <a href="../motor/indexB.php" class="nav-link">
+                                <i class="nav-icon fa fa-motorcycle"></i>
                                 <p>
-                                    Data Buku
+                                    Data Motor
                                 </p>
                             </a>
                         </li>
@@ -201,8 +201,8 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>PERPUSTAKAAN UMUM </strong>
-            | Jl. Lembah Abang No 11, Telp: (021)55555555
+            <strong>RENTAL MOTOR JWD </strong>
+            | Jl. Selamat No 123, Telp: 022- 56785XXXX
         </footer>
 
         <!-- Control Sidebar -->

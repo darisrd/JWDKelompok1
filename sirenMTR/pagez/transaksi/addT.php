@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIPUS | Transaksi</title>
+    <title>SIRENMTR | Transaksi</title>
 
     <?php
     include '../../koneksi.php';
@@ -75,7 +75,7 @@
             <!-- Brand Logo -->
             <a href="../../index.php" class="brand-link">
                 <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">SIPUS</span>
+                <span class="brand-text font-weight-light">SIRENMTR</span>
             </a>
 
             <!-- Sidebar -->
@@ -117,10 +117,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../buku/indexB.php" class="nav-link">
-                                <i class="nav-icon fa fa-book"></i>
+                            <a href="../motor/indexB.php" class="nav-link">
+                                <i class="nav-icon fa fa-motorcycle"></i>
                                 <p>
-                                    Data Buku
+                                    Data Motor
                                 </p>
                             </a>
                         </li>
@@ -156,18 +156,14 @@
                     <form action="../../proses/transaksi-peminjaman-input-proses.php" method="post">
                         <table class="table">
                             <tr>
-                                <?php
+                            <?php
                                 include '../../koneksi.php';
                                 $query = mysqli_query($db, "SELECT max(idtransaksi) as kodeTerbesar FROM tbtransaksi");
                                 $data = mysqli_fetch_array($query);
                                 $kodeid = $data['kodeTerbesar'];
-
-                                $urutan = (int) substr($kodeid, 3, 3);
-
-                                $urutan++;
-
-                                $huruf = "TR";
-                                $kodeid = $huruf . sprintf("%03s", $urutan);
+                                $urutan = (int) $kodeid;
+                                $urutan = $urutan + 1;
+                                $kodeid = $urutan;
 
                                 ?>
                                 <td><label> ID Transaksi</label></td>
@@ -182,7 +178,7 @@
                                         $q_tampil_anggota = mysqli_query(
                                             $db,
                                             "SELECT * FROM tbanggota
-							WHERE status='Tidak Meminjam'
+							WHERE status='Tidak Merental'
 							ORDER BY idanggota"
                                         );
                                         while ($r_tampil_anggota = mysqli_fetch_array($q_tampil_anggota)) {
@@ -193,19 +189,19 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="label-formulir">Buku</td>
+                                <td class="label-formulir">Motor</td>
                                 <td class="isian-formulir">
-                                    <select required name="id_buku" class="form-control">
-                                        <option value="" select="selected"> Pilih Data Buku </option>
+                                    <select required name="id_motor" class="form-control">
+                                        <option value="" select="selected"> Pilih Data Motor </option>
                                         <?php
-                                        $q_tampil_buku = mysqli_query(
+                                        $q_tampil_motor = mysqli_query(
                                             $db,
-                                            "SELECT * FROM tbbuku
+                                            "SELECT * FROM tbmotor
 							WHERE status='Tersedia'
-							ORDER BY idbuku"
+							ORDER BY id"
                                         );
-                                        while ($r_tampil_buku = mysqli_fetch_array($q_tampil_buku)) {
-                                            echo "<option value=$r_tampil_buku[idbuku]>$r_tampil_buku[idbuku] | $r_tampil_buku[judulbuku]</option>";
+                                        while ($r_tampil_motor = mysqli_fetch_array($q_tampil_motor)) {
+                                            echo "<option value=$r_tampil_motor[id]>$r_tampil_motor[merkmotor]  $r_tampil_motor[namamotor]</option>";
                                         }
                                         ?>
                                     </select>
@@ -231,8 +227,8 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>PERPUSTAKAAN UMUM </strong>
-            | Jl. Lembah Abang No 11, Telp: (021)55555555
+            <strong>RENTAL MOTOR JWD </strong>
+            | Jl. Selamat No 123, Telp: 022- 56785XXXX
         </footer>
 
         <!-- Control Sidebar -->

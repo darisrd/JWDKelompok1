@@ -6,5 +6,5 @@ mysqli_query($db,
 	"DELETE FROM tbmotor
 	WHERE id='$id_motor'"
 );
-header("location:../pagez/buku/indexB.php");
+header("location:../pagez/motor/indexB.php");
 ?>

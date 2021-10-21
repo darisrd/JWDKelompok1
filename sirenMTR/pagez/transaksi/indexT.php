@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIPUS | Transaksi</title>
+    <title>SIRENMTR | Transaksi</title>
 
     <?php
     include '../../koneksi.php';
@@ -75,7 +75,7 @@
             <!-- Brand Logo -->
             <a href="../../index.php" class="brand-link">
                 <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">SIPUS</span>
+                <span class="brand-text font-weight-light">SIRENMTR</span>
             </a>
 
             <!-- Sidebar -->
@@ -117,10 +117,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../buku/indexB.php" class="nav-link">
-                                <i class="nav-icon fa fa-book"></i>
+                            <a href="../motor/indexB.php" class="nav-link">
+                                <i class="nav-icon fa fa-motorcycle"></i>
                                 <p>
-                                    Data Buku
+                                    Data motor
                                 </p>
                             </a>
                         </li>
@@ -169,10 +169,10 @@
                         <tbody>
                             <?php
 
-                            $sql = "SELECT tbtransaksi.*,tbanggota.*,tbbuku.*
-                            FROM tbtransaksi,tbanggota,tbbuku
+                            $sql = "SELECT tbtransaksi.*,tbanggota.*,tbmotor.*
+                            FROM tbtransaksi,tbanggota,tbmotor
                             WHERE tbtransaksi.idanggota=tbanggota.idanggota
-                            AND tbtransaksi.idbuku=tbbuku.idbuku
+                            AND tbtransaksi.idmotor=tbmotor.id
                             AND tbtransaksi.tglkembali='0000-00-00'
                             ORDER BY tbtransaksi.idtransaksi DESC";
 
@@ -186,12 +186,11 @@
                                     <td><?php echo $r_transaksi['idtransaksi']; ?></td>
                                     <td><?php echo $r_transaksi['idanggota']; ?></td>
                                     <td><?php echo $r_transaksi['nama']; ?></td>
-                                    <td><?php echo $r_transaksi['idbuku']; ?></td>
-                                    <td><?php echo $r_transaksi['judulbuku']; ?></td>
+                                    <td><?php echo $r_transaksi['merkmotor']; ?> <?php echo $r_transaksi['namamotor']; ?></td>
                                     <td><?php echo $r_transaksi['tglpinjam']; ?></td>
                                     <td>
                                         <div class="tombol-opsi-container"><a href="../../cetak/nota-peminjaman.php?&id=<?php echo $r_transaksi['idtransaksi']; ?>" target="_blank" class="tombol">Cetak Nota</a></div>
-                                        <div onclick="return confirm('Yakin ingin mengembalikan buku ?')" class="tombol-opsi-container"><a href="../../proses/pengembalian-proses.php?&id=<?php echo $r_transaksi['idtransaksi']; ?>" class="tombol">Pengembalian</a></div>
+                                        <div onclick="return confirm('Yakin ingin mengembalikan motor ?')" class="tombol-opsi-container"><a href="../../proses/pengembalian-proses.php?&id=<?php echo $r_transaksi['idtransaksi']; ?>" class="tombol">Pengembalian</a></div>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -207,8 +206,8 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>PERPUSTAKAAN UMUM </strong>
-            | Jl. Lembah Abang No 11, Telp: (021)55555555
+            <strong>RENTAL MOTOR JWD </strong>
+            | Jl. Selamat No 123, Telp: 022- 56785XXXX
         </footer>
 
         <!-- Control Sidebar -->

@@ -13,7 +13,7 @@ if(isset($_POST['simpan'])){
 	VALUES('$id_motor','$nama_motor','$merk_motor','$status')";
 	$query = mysqli_query($db, $sql);
 
-	header("location:../pagez/buku/indexB.php");
+	header("location:../pagez/motor/indexB.php");
 }
 
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIPUS | Buku</title>
+    <title>SIRENMTR | Motor</title>
 
     <?php
     include '../../koneksi.php';
@@ -118,9 +118,9 @@
                         </li>
                         <li class="nav-item">
                             <a href="indexB.php" class="nav-link">
-                                <i class="nav-icon fa fa-book"></i>
+                                <i class="nav-icon fa fa-motorcycle"></i>
                                 <p>
-                                    Data Buku
+                                    Data Motor
                                 </p>
                             </a>
                         </li>
@@ -153,7 +153,7 @@
                 </div><!-- /.container-fluid -->
                 <div class="container-fluid">
                     
-                    <form action="../../proses/buku-input-proses.php" method="post">
+                    <form action="../../proses/motor-input-proses.php" method="post">
                         <table class="table">
                             <tr>
                             <?php
@@ -203,8 +203,8 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>PERPUSTAKAAN UMUM </strong>
-            | Jl. Lembah Abang No 11, Telp: (021)55555555
+            <strong>RENTAL MOTOR JWD </strong>
+            | Jl. Selamat No 123, Telp: 022- 56785XXXX
         </footer>
 
         <!-- Control Sidebar -->

@@ -1,10 +1,10 @@
 <?php
 include'../koneksi.php';
-$id_buku=$_GET['id'];
+$id_motor=$_GET['id'];
 
 mysqli_query($db,
-	"DELETE FROM tbbuku
-	WHERE idbuku='$id_buku'"
+	"DELETE FROM tbmotor
+	WHERE id='$id_motor'"
 );
-header("location:../pagez/buku/indexB.php");
+header("location:../pagez/motor/indexB.php");
 ?>

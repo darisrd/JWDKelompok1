@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIPUS | Buku</title>
+    <title>SIPUS | motor</title>
 
     <?php
     include '../../koneksi.php';
@@ -120,7 +120,7 @@
                             <a href="indexB.php" class="nav-link">
                                 <i class="nav-icon fa fa-book"></i>
                                 <p>
-                                    Data Buku
+                                    Data motor
                                 </p>
                             </a>
                         </li>
@@ -146,45 +146,41 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Data Buku</h1>
+                            <h1 class="m-0">Data motor</h1>
                         </div><!-- /.col -->
                         <!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
                 <div class="container-fluid">
-                    <a class="btn btn-primary" href="addB.php">Tambah Buku</a>
+                    <a class="btn btn-primary" href="addB.php">Tambah motor</a>
                     <br>
                     <table class="table">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>ID Buku</th>
-                                <th>Judul Buku</th>
-                                <th>Kategori</th>
-                                <th>Pengarang</th>
-                                <th>Penerbit</th>
+                                <th>ID motor</th>
+                                <th>Nama motor</th>
+                                <th>Merk motor</th>
                                 <th>Opsi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
 
-                            $sql = "SELECT * FROM tbbuku ORDER BY idbuku DESC";
-                            $q_tampil_buku = mysqli_query($db, $sql);
+                            $sql = "SELECT * FROM tbmotor ORDER BY id DESC";
+                            $q_tampil_motor = mysqli_query($db, $sql);
 
                             $nomor = 1;
-                            while ($r_tampil_buku = mysqli_fetch_array($q_tampil_buku)) {
+                            while ($r_tampil_motor = mysqli_fetch_array($q_tampil_motor)) {
                             ?>
                                 <tr>
                                     <td><?php echo $nomor++; ?></td>
-                                    <td><?php echo $r_tampil_buku['idbuku']; ?></td>
-                                    <td><?php echo $r_tampil_buku['judulbuku']; ?></td>
-                                    <td><?php echo $r_tampil_buku['kategori']; ?></td>
-                                    <td><?php echo $r_tampil_buku['pengarang']; ?></td>
-                                    <td><?php echo $r_tampil_buku['penerbit']; ?></td>
+                                    <td><?php echo $r_tampil_motor['id']; ?></td>
+                                    <td><?php echo $r_tampil_motor['namamotor']; ?></td>
+                                    <td><?php echo $r_tampil_motor['merkmotor']; ?></td>
                                     <td>
-                                        <a class="btn btn-primary" href="editB.php?id=<?php echo $r_tampil_buku['idbuku']; ?>">Edit</a>
-                                        <a onclick="return confirm('Yakin ingin menghapus data ?')" class="btn btn-danger" href="../../proses/buku-hapus.php?id=<?php echo $r_tampil_buku['idbuku']; ?>">Hapus</a>
+                                        <a class="btn btn-primary" href="editB.php?id=<?php echo $r_tampil_motor['id']; ?>">Edit</a>
+                                        <a onclick="return confirm('Yakin ingin menghapus data ?')" class="btn btn-danger" href="../../proses/motor-hapus.php?id=<?php echo $r_tampil_motor['id']; ?>">Hapus</a>
 
                                     </td>
                                 </tr>

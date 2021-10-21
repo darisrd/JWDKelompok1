@@ -160,9 +160,8 @@
                                 <th>No</th>
                                 <th>ID Transaksi</th>
                                 <th>ID Anggota</th>
-                                <th>Nama</th>
-                                <th>ID Buku</th>
-                                <th>Judul Buku</th>
+                                <th>Nama Motor</th>
+                                <th>Merk Motor</th>
                                 <th>Tanggal Pinjam</th>
                                 <th>Opsi</th>
                             </tr>

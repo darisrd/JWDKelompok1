@@ -4,7 +4,7 @@ $id_anggota=$_POST['id_anggota'];
 $nama=$_POST['nama'];
 $jenis_kelamin=$_POST['jenis_kelamin'];
 $alamat=$_POST['alamat'];
-$status="Tidak Meminjam";
+$status="Tidak Merental";
 	
 if(isset($_POST['simpan'])){
 

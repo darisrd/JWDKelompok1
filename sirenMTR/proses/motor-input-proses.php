@@ -1,10 +1,8 @@
 <?php
 include'../koneksi.php';
-$id_buku=$_POST['id_buku'];
-$judul_buku=$_POST['judul_buku'];
-$kategori=$_POST['kategori'];
-$pengarang=$_POST['pengarang'];
-$penerbit=$_POST['penerbit'];
+$id_motor=$_POST['id_motor'];
+$nama_motor=$_POST['nama_motor'];
+$merk_motor=$_POST['merk_motor'];
 $status="Tersedia";
 	
 // if(isset($_POST['simpan'])){

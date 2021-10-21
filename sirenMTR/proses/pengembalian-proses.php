@@ -10,8 +10,8 @@ $q_transaksi=mysqli_query($db,
 $r_transaksi=mysqli_fetch_array($q_transaksi);
 $id_anggota=$r_transaksi['idanggota'];
 $status_anggota="Tidak Meminjam";
-$id_buku=$r_transaksi['idbuku'];
-$status_buku="Tersedia";
+$id_motor=$r_transaksi['idmotor'];
+$status_motor="Tersedia";
 	
 if(isset($_GET['id'])){
 	mysqli_query($db,
@@ -25,9 +25,9 @@ if(isset($_GET['id'])){
 		WHERE idanggota='$id_anggota'"
 	);
 	mysqli_query($db,
-		"UPDATE tbbuku
-		SET status='$status_buku'
-		WHERE idbuku='$id_buku'"
+		"UPDATE tbmotor
+		SET status='$status_motor'
+		WHERE idmotor='$id_motor'"
 	);
 	header("location:../pagez/transaksi/indexT.php");
 }

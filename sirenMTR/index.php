@@ -116,7 +116,7 @@
                             <a href="pagez/buku/indexB.php" class="nav-link">
                                 <i class="nav-icon fa fa-book"></i>
                                 <p>
-                                    Data Buku
+                                    Data Motor
                                 </p>
                             </a>
                         </li>
@@ -124,7 +124,7 @@
                             <a href="pagez/transaksi/indexT.php" class="nav-link">
                                 <i class="nav-icon fa fa-list-ol"></i>
                                 <p>
-                                    Transaksi Peminjaman
+                                    Transaksi Rental
                                 </p>
                             </a>
                         </li>

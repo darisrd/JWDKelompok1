@@ -75,7 +75,7 @@
             <!-- Brand Logo -->
             <a href="../../index.php" class="brand-link">
                 <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">SIPUS</span>
+                <span class="brand-text font-weight-light">SIRENMTR</span>
             </a>
 
             <!-- Sidebar -->
@@ -146,56 +146,47 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Beranda</h1>
+                            <h1 class="m-0">Tambah Motor</h1>
                         </div><!-- /.col -->
                         <!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
                 <div class="container-fluid">
-                    INI ADD BUKU
+                    
                     <form action="../../proses/buku-input-proses.php" method="post">
                         <table class="table">
                             <tr>
-                                <?php
+                            <?php
                                 include '../../koneksi.php';
-                                $query = mysqli_query($db, "SELECT max(idbuku) as kodeTerbesar FROM tbbuku");
+                                $query = mysqli_query($db, "SELECT max(id) as kodeTerbesar FROM tbmotor");
                                 $data = mysqli_fetch_array($query);
                                 $kodeid = $data['kodeTerbesar'];
-
-                                $urutan = (int) substr($kodeid, 3, 3);
-
-                                $urutan++;
-
-                                $huruf = "BK";
-                                $kodeid = $huruf . sprintf("%03s", $urutan);
+                                $urutan = (int) $kodeid;
+                                $urutan = $urutan + 1;
+                                $kodeid = $urutan;
 
                                 ?>
-                                <td class="label-formulir">ID Buku</td>
-                                <td class="isian-formulir"><input readonly value="<?= $kodeid ?>" required type="text" name="id_buku" class="isian-formulir isian-formulir-border"></td>
+                                <td class="label-formulir">ID</td>
+                                <td class="isian-formulir"><input readonly value="<?= $kodeid ?>" required type="text" name="id" class="isian-formulir isian-formulir-border"></td>
                             </tr>
                             <tr>
-                                <td class="label-formulir">Judul Buku</td>
-                                <td class="isian-formulir"><input required type="text" name="judul_buku" class="isian-formulir isian-formulir-border"></td>
+                                <td class="label-formulir">Nama Motor</td>
+                                <td class="isian-formulir"><input required type="text" name="nama_motor" class="isian-formulir isian-formulir-border"></td>
                             </tr>
                             <tr>
                                 <td class="label-formulir">Kategori</td>
                                 <td class="isian-formulir">
-                                    <select required name="kategori" class="isian-formulir isian-formulir-border">
+                                    <select required name="merk_motor" class="isian-formulir isian-formulir-border">
                                         <option value="" select="selected">~ Pilih Kategori ~</option>
-                                        <option value="Ilmu Komputer">Ilmu Komputer</option>
-                                        <option value="Ilmu Agama">Ilmu Agama</option>
-                                        <option value="Karya Sastra">Karya Sastra</option>
+                                        <option value="Yamaha">Yamaha</option>
+                                        <option value="Honda">Honda</option>
+                                        <option value="Suzuki">Suzuki</option>
+                                        <option value="Kawasaki">Kawasaki</option>
+                                        <option value="Harley Davidson">Harley Davidson</option>
                                     </select>
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="label-formulir">Pengarang</td>
-                                <td class="isian-formulir"><input required type="text" name="pengarang" class="isian-formulir isian-formulir-border"></td>
-                            </tr>
-                            <tr>
-                                <td class="label-formulir">Penerbit</td>
-                                <td class="isian-formulir"><input required type="text" name="penerbit" class="isian-formulir isian-formulir-border"></td>
-                            </tr>
+                            
                             <tr>
                                 <td class="label-formulir"></td>
                                 <td class="isian-formulir"><input type="submit" name="simpan" value="Simpan" class="tombol"></td>

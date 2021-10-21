@@ -155,31 +155,36 @@
                     INI ADD BUKU
                     <?php
                     $id_buku = $_GET['id'];
-                    $q_tampil_buku = mysqli_query($db, "SELECT * FROM tbbuku WHERE idbuku='$id_buku'");
+                    $q_tampil_buku = mysqli_query($db, "SELECT * FROM tbmotor WHERE id='$id_buku'");
                     $r_tampil_buku = mysqli_fetch_array($q_tampil_buku);
 
                     ?>
                     <form action="../../proses/buku-edit-proses.php" method="post">
                         <table id="tabel-input">
                             <tr>
-                                <td class="label-formulir">ID Buku</td>
-                                <td class="isian-formulir"><input type="text" name="id_buku" value="<?php echo $r_tampil_buku['idbuku']; ?>" readonly="readonly" class="isian-formulir isian-formulir-border warna-formulir-disabled"></td>
+                                <td class="label-formulir">ID</td>
+                                <td class="isian-formulir"><input type="text" name="id_buku" value="<?php echo $r_tampil_buku['id']; ?>" readonly="readonly" class="isian-formulir isian-formulir-border warna-formulir-disabled"></td>
                             </tr>
                             <tr>
-                                <td class="label-formulir">Judul Buku</td>
-                                <td class="isian-formulir"><input type="text" name="judul_buku" value="<?php echo $r_tampil_buku['judulbuku']; ?>" class="isian-formulir isian-formulir-border"></td>
+                                <td class="label-formulir">Nama Motor</td>
+                                <td class="isian-formulir"><input type="text" name="judul_buku" value="<?php echo $r_tampil_buku['namamotor']; ?>" class="isian-formulir isian-formulir-border"></td>
                             </tr>
                             <tr>
-                                <td class="label-formulir">Kategori</td>
-                                <td class="isian-formulir"><input type="text" name="kategori" value="<?php echo $r_tampil_buku['kategori']; ?>" class="isian-formulir isian-formulir-border"></td>
+                                <td class="label-formulir">Merk Motor</td>
+                                <td class="isian-formulir">
+                                <select required name="merk_motor" value="<?php echo $r_tampil_buku['merkmotor']; ?>" class="isian-formulir isian-formulir-border">
+                                        <option value="" select="selected">~ Pilih Kategori ~</option>
+                                        <option value="Yamaha">Yamaha</option>
+                                        <option value="Honda">Honda</option>
+                                        <option value="Suzuki">Suzuki</option>
+                                        <option value="Kawasaki">Kawasaki</option>
+                                        <option value="Harley Davidson">Harley Davidson</option>
+                                    </select>
+                                    </td>
                             </tr>
                             <tr>
-                                <td class="label-formulir">Pengarang</td>
-                                <td class="isian-formulir"><input type="text" name="pengarang" value="<?php echo $r_tampil_buku['pengarang']; ?>" class="isian-formulir isian-formulir-border"></td>
-                            </tr>
-                            <tr>
-                                <td class="label-formulir">Penerbit</td>
-                                <td class="isian-formulir"><input type="text" name="penerbit" value="<?php echo $r_tampil_buku['penerbit']; ?>" class="isian-formulir isian-formulir-border"></td>
+                                <td class="label-formulir">Status</td>
+                                <td class="isian-formulir"><input type="text" name="pengarang" value="<?php echo $r_tampil_buku['status']; ?>" class="isian-formulir isian-formulir-border"></td>
                             </tr>
                             <tr>
                                 <td class="label-formulir"></td>

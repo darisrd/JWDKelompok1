@@ -170,13 +170,13 @@
                                 $kodeid = $huruf . sprintf("%03s", $urutan);
 
                                 ?>
-                                <td class="label-formulir">ID Transaksi</td>
-                                <td class="isian-formulir"><input readonly value="<?= $kodeid ?>" required type="text" name="id_transaksi" class="isian-formulir isian-formulir-border"></td>
+                                <td><label> ID Transaksi</label></td>
+                                <td class="isian-formulir"><input class="form-control" readonly value="<?= $kodeid ?>" required type="text" name="id_transaksi" class="isian-formulir isian-formulir-border"></td>
                             </tr>
                             <tr>
                                 <td class="label-formulir">Anggota</td>
                                 <td class="isian-formulir">
-                                    <select required name="id_anggota" class="isian-formulir isian-formulir-border">
+                                    <select required name="id_anggota" class="form-control">
                                         <option value="" select="selected"> Pilih Data Anggota </option>
                                         <?php
                                         $q_tampil_anggota = mysqli_query(
@@ -195,7 +195,7 @@
                             <tr>
                                 <td class="label-formulir">Buku</td>
                                 <td class="isian-formulir">
-                                    <select required name="id_buku" class="isian-formulir isian-formulir-border">
+                                    <select required name="id_buku" class="form-control">
                                         <option value="" select="selected"> Pilih Data Buku </option>
                                         <?php
                                         $q_tampil_buku = mysqli_query(
@@ -213,11 +213,11 @@
                             </tr>
                             <tr>
                                 <td class="label-formulir">Tanggal Pinjam</td>
-                                <td class="isian-formulir"><input type="text" name="tgl_pinjam" value="<?php echo $tgl; ?>" readonly="readonly" class="isian-formulir isian-formulir-border warna-formulir-disabled"></td>
+                                <td class="isian-formulir"><input class="form-control" type="text" name="tgl_pinjam" value="<?php echo $tgl; ?>" readonly="readonly" class="isian-formulir isian-formulir-border warna-formulir-disabled"></td>
                             </tr>
                             <tr>
                                 <td class="label-formulir"></td>
-                                <td class="isian-formulir"><input type="submit" name="simpan" value="Simpan" class="tombol"></td>
+                                <td class="isian-formulir"><input class="btn btn-primary mt-5" type="submit" name="simpan" value="Simpan" class="tombol"></td>
                             </tr>
                         </table>
                     </form>

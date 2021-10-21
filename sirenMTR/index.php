@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIPUS | Dashboard</title>
+    <title>SIRENMTR | Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -70,7 +70,7 @@
             <!-- Brand Logo -->
             <a href="index.php" class="brand-link">
                 <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">SIPUS</span>
+                <span class="brand-text font-weight-light">SIRENMTR</span>
             </a>
 
             <!-- Sidebar -->
@@ -149,13 +149,13 @@
                 </div><!-- /.container-fluid -->
                 <div class="container-fluid">
                     <div class="mb-3 text-center">
-                        <h2>SELAMAT DATANG DI SISTEM INFORMASI PERPUSTAKAAN TELKOM</h2>
+                        <h2>SELAMAT DATANG DI PERENTALAN MOTOR JWD</h2>
                     </div>
                     <div class="mt-4 text-center">
                         <h3 class="text-danger">
-                            "MEMBACA ADALAH JENDELA DUNIA"
+                            "RENTAL TERBAIK DI DUNIA"
                         </h3>
-                        <img style="max-width: 420px;" src="images/logo-perpustakaan3.png">
+                        <img style="max-width: 420px;" src="images/motor.png">
                     </div>
                 </div>
             </div>
@@ -167,8 +167,8 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>PERPUSTAKAAN UMUM </strong>
-            | Jl. Lembah Abang No 11, Telp: (021)55555555
+            <strong>RENTAL MOTOR JWD </strong>
+            | Jl. Selamat No 123, Telp: 022- 56785XXXX
         </footer>
 
         <!-- Control Sidebar -->

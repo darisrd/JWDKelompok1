@@ -142,52 +142,50 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
+            <nav class="navbar navbar-dark bg-dark">
+                <h3 class="navbar-brand text-center">Data Anggota</h3>
+            </nav>
             <!-- Content Header (Page header) -->
             <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Data Anggota</h1>
-                        </div><!-- /.col -->
-                        <!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
+                
                 <div class="container-fluid">
                     <a class="btn btn-primary" href="addA.php">Tambah Anggota</a>
                     <br>
-                    <table class='table'>
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>ID Anggota</th>
-                                <th>Nama</th>
-                                <th>Jenis Kelamin</th>
-                                <th>Alamat</th>
-                                <th>Opsi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $sql = "SELECT * FROM tbanggota ORDER BY idanggota DESC";
-                            $q_tampil_anggota = mysqli_query($db, $sql);
-                            $nomor = 1;
-                            while ($r_tampil_anggota = mysqli_fetch_array($q_tampil_anggota)) {
-
-                            ?>
+                    <div class="table-responsive">
+                        <table class='table text-nowrap'>
+                            <thead>
                                 <tr>
-                                    <td><?php echo $nomor++; ?></td>
-                                    <td><?php echo $r_tampil_anggota['idanggota']; ?></td>
-                                    <td><?php echo $r_tampil_anggota['nama']; ?></td>
-                                    <td><?php echo $r_tampil_anggota['jeniskelamin']; ?></td>
-                                    <td><?php echo $r_tampil_anggota['alamat']; ?></td>
-                                    <td>
-                                        <a class="btn btn-primary" href="editA.php?id=<?php echo $r_tampil_anggota['idanggota']; ?>">Edit</a>
-                                        <a onclick="return confirm('Yakin ingin menghapus data ?')" class="btn btn-danger" href="../../proses/anggota-hapus.php?id=<?php echo $r_tampil_anggota['idanggota']; ?>">Hapus</a>
-                                    </td>
+                                    <th>No</th>
+                                    <th>ID Anggota</th>
+                                    <th>Nama</th>
+                                    <th>Jenis Kelamin</th>
+                                    <th>Alamat</th>
+                                    <th>Opsi</th>
                                 </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $sql = "SELECT * FROM tbanggota ORDER BY idanggota DESC";
+                                $q_tampil_anggota = mysqli_query($db, $sql);
+                                $nomor = 1;
+                                while ($r_tampil_anggota = mysqli_fetch_array($q_tampil_anggota)) {
+
+                                ?>
+                                    <tr>
+                                        <td><?php echo $nomor++; ?></td>
+                                        <td><?php echo $r_tampil_anggota['idanggota']; ?></td>
+                                        <td><?php echo $r_tampil_anggota['nama']; ?></td>
+                                        <td><?php echo $r_tampil_anggota['jeniskelamin']; ?></td>
+                                        <td><?php echo $r_tampil_anggota['alamat']; ?></td>
+                                        <td>
+                                            <a class="btn btn-primary" href="editA.php?id=<?php echo $r_tampil_anggota['idanggota']; ?>">Edit</a>
+                                            <a onclick="return confirm('Yakin ingin menghapus data ?')" class="btn btn-danger" href="../../proses/anggota-hapus.php?id=<?php echo $r_tampil_anggota['idanggota']; ?>">Hapus</a>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <!-- /.content-header -->

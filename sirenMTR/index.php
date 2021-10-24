@@ -137,16 +137,12 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
+            <nav class="navbar navbar-dark bg-dark">
+                <h3 class="navbar-brand text-center">Beranda</h3>
+            </nav>
             <!-- Content Header (Page header) -->
             <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Beranda</h1>
-                        </div><!-- /.col -->
-                        
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
+
                 <div class="container-fluid">
                     <div class="mb-3 text-center">
                         <h2>SELAMAT DATANG DI PERENTALAN MOTOR JWD</h2>
@@ -155,7 +151,10 @@
                         <h3 class="text-danger">
                             "RENTAL TERBAIK DI DUNIA"
                         </h3>
-                        <img style="max-width: 420px;" src="images/motor.png">
+                        <?php
+                        $gambar = "motor";
+                        ?>
+                        <img class="img-fluid mt-3" src="images/<?=$gambar?>.png">
                     </div>
                 </div>
             </div>

@@ -141,55 +141,53 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
+            <nav class="navbar navbar-dark bg-dark">
+                <h3 class="navbar-brand text-center">Tambah Anggota</h3>
+            </nav>
             <!-- Content Header (Page header) -->
             <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Beranda</h1>
-                        </div><!-- /.col -->
-                        <!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
-                <div class="container-fluid">
-                    INI ADD ANGGOTA
-                    <form action="../../proses/anggota-input-proses.php" method="post">
-                        <table class="table">
-                            <tr>
-                                <?php
-                                include '../../koneksi.php';
-                                $query = mysqli_query($db, "SELECT max(idanggota) as kodeTerbesar FROM tbanggota");
-                                $data = mysqli_fetch_array($query);
-                                $kodeid = $data['kodeTerbesar'];
-                                $urutan = (int) $kodeid;
-                                $urutan = $urutan + 1;
-                                $kodeid = $urutan;
 
-                                ?>
-                                <td class="label-formulir">ID Anggota</td>
-                                <td class="isian-formulir"><input required readonly type="text" value="<?= $kodeid ?>" name="id_anggota" class="isian-formulir isian-formulir-border"></td>
-                            </tr>
-                            <tr>
-                                <td class="label-formulir">Nama</td>
-                                <td class="isian-formulir"><input required type="text" name="nama" class="isian-formulir isian-formulir-border"></td>
-                            </tr>
-                            <tr>
-                                <td class="label-formulir">Jenis Kelamin</td>
-                                <td class="isian-formulir"><input required type="radio" name="jenis_kelamin" value="Pria">Pria</label></td>
-                            </tr>
-                            <tr>
-                                <td class="label-formulir"></td>
-                                <td class="isian-formulir"><input required type="radio" name="jenis_kelamin" value="Wanita">Wanita</td>
-                            </tr>
-                            <tr>
-                                <td class="label-formulir">Alamat</td>
-                                <td class="isian-formulir"><textarea required rows="2" cols="40" name="alamat" class="isian-formulir isian-formulir-border"></textarea></td>
-                            </tr>
-                            <tr>
-                                <td class="label-formulir"></td>
-                                <td class="isian-formulir"><input type="submit" name="simpan" value="Simpan" class="tombol"></td>
-                            </tr>
-                        </table>
+                <div class="container-fluid">
+
+                    <form action="../../proses/anggota-input-proses.php" method="post">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <?php
+                                    include '../../koneksi.php';
+                                    $query = mysqli_query($db, "SELECT max(idanggota) as kodeTerbesar FROM tbanggota");
+                                    $data = mysqli_fetch_array($query);
+                                    $kodeid = $data['kodeTerbesar'];
+                                    $urutan = (int) $kodeid;
+                                    $urutan = $urutan + 1;
+                                    $kodeid = $urutan;
+
+                                    ?>
+                                    <td class="label-formulir">ID Anggota</td>
+                                    <td class="isian-formulir"><input required readonly type="text" value="<?= $kodeid ?>" name="id_anggota" class="isian-formulir isian-formulir-border"></td>
+                                </tr>
+                                <tr>
+                                    <td class="label-formulir">Nama</td>
+                                    <td class="isian-formulir"><input required type="text" name="nama" class="isian-formulir isian-formulir-border"></td>
+                                </tr>
+                                <tr>
+                                    <td class="label-formulir">Jenis Kelamin</td>
+                                    <td class="isian-formulir"><input required type="radio" name="jenis_kelamin" value="Pria">Pria</label></td>
+                                </tr>
+                                <tr>
+                                    <td class="label-formulir"></td>
+                                    <td class="isian-formulir"><input required type="radio" name="jenis_kelamin" value="Wanita">Wanita</td>
+                                </tr>
+                                <tr>
+                                    <td class="label-formulir">Alamat</td>
+                                    <td class="isian-formulir"><textarea required rows="2" cols="40" name="alamat" class="isian-formulir isian-formulir-border"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td class="label-formulir"></td>
+                                    <td class="isian-formulir"><input type="submit" name="simpan" value="Simpan" class="tombol"></td>
+                                </tr>
+                            </table>
+                        </div>
                     </form>
                 </div>
             </div>
